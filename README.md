@@ -30,7 +30,22 @@ Quick start (recommended order)
     DATABASE_URL="postgresql://USER:PASSWORD@HOST:5432/DATABASE_NAME?schema=public"
     ```
 
-  - Install dependencies and use the local Prisma CLI (avoid global-version mismatch):
+  - JWT secret
+
+    - The backend uses JWT for authentication (see `src/auth`). Set a strong secret in `library-backend/.env` named `JWT_SECRET`.
+    - Example (add to `.env` after copying `.env.example`):
+
+      ```text
+      JWT_SECRET="very_long_random_secret_here"
+      ```
+
+    - Best practices:
+      - Use a long (>=32 characters), random string (e.g., from `openssl rand -base64 32`).
+      - Do NOT commit the real secret to the repo — keep `.env` in `.gitignore` and only commit `.env.example`.
+      - In production, store secrets in a secrets manager (AWS Secrets Manager, Azure Key Vault, GitHub Secrets, etc.) and inject them into the runtime environment.
+
+  - Install dependencies and use the local Prisma CLI 
+  (prisma version 5.22)(avoid global-version mismatch):
 
     ```powershell
     npm install

@@ -84,7 +84,7 @@ export default function Books() {
           {editId === b.id ? (
             <>
               <input
-                style={{ flex: 1 }}
+                style={{ flex: 1,width: "fit-content" }}
                 value={editTitle}
                 onChange={(e) => setEditTitle(e.target.value)}
               />

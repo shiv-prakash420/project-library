@@ -5,7 +5,7 @@
 **Prerequisites**
 - Node.js (recommended 18.x or 20.x)
 - npm 9+ (or use the bundled `npx` for CLI tools)
-- PostgreSQL (or Docker) for the backend datastore
+- PostgreSQL  for the backend datastore
 - Git
 
 Overview

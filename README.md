@@ -16,12 +16,10 @@ Quick start (recommended order)
 
 1) Backend — install, configure database, run migrations
 
-  - Copy the example env and set your database connection (PowerShell):
+  - Create a .env file in 'library-backend' and copy the example env to it and set your database connection (PowerShell):
 
     ```powershell
     cd library-backend
-    copy .env.example .env 2>$null || Out-Null
-    # Edit `.env` and set DATABASE_URL accordingly
     ```
 
   - Example `DATABASE_URL` (Postgres):

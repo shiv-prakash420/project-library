@@ -28,6 +28,7 @@ Quick start (recommended order)
 
     ```text
     DATABASE_URL="postgresql://USER:PASSWORD@HOST:5432/DATABASE_NAME?schema=public"
+    # replace USER mostly 'postgres', password and DATABASE_NAME with valid credentials.
     ```
 
   - JWT secret
@@ -48,12 +49,7 @@ Quick start (recommended order)
 
     - To help new contributors, the backend includes a small seed script that will create an initial admin user when no admins exist.
     - Provide these values in `library-backend/.env` (copy from `.env.example`): `ADMIN_EMAIL`, `ADMIN_PASSWORD`, and optionally `ADMIN_NAME`.
-    - Run the seed manually:
-
-      ```powershell
-      cd library-backend
-      npm run seed
-      ```
+   
 
     - During development `npm run start:dev` will automatically run the seed script (after `prisma generate`) if those vars are set and no admin exists.
     - If you prefer not to set env vars, you can create the first admin through the API endpoint `POST /auth/create-admin` (use Postman) as before.
@@ -116,7 +112,7 @@ Quick start (recommended order)
 
 3) Run both together
 
-  - Start backend (on port 3000) and then frontend. The React app will call the backend at `http://localhost:3000` by default.
+  - Start backend (on port 3000) and then frontend. The React app will call the backend at `http://localhost:3000` by default. Login credentials are in .env file.
 
 
 

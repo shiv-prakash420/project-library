@@ -121,7 +121,7 @@ Useful commands (PowerShell)
 cd library-backend
 npm install
 npx prisma generate
-npx prisma migrate deploy    # apply existing migrations
+npx prisma migrate dev --name init
 npm run start:dev
 
 # Frontend (new window)

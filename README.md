@@ -44,6 +44,20 @@ Quick start (recommended order)
       - Do NOT commit the real secret to the repo — keep `.env` in `.gitignore` and only commit `.env.example`.
       - In production, store secrets in a secrets manager (AWS Secrets Manager, Azure Key Vault, GitHub Secrets, etc.) and inject them into the runtime environment.
 
+  - Initial admin user (recommended)
+
+    - To help new contributors, the backend includes a small seed script that will create an initial admin user when no admins exist.
+    - Provide these values in `library-backend/.env` (copy from `.env.example`): `ADMIN_EMAIL`, `ADMIN_PASSWORD`, and optionally `ADMIN_NAME`.
+    - Run the seed manually:
+
+      ```powershell
+      cd library-backend
+      npm run seed
+      ```
+
+    - During development `npm run start:dev` will automatically run the seed script (after `prisma generate`) if those vars are set and no admin exists.
+    - If you prefer not to set env vars, you can create the first admin through the API endpoint `POST /auth/create-admin` (use Postman) as before.
+
   - Install dependencies and use the local Prisma CLI 
   (prisma version 5.22)(avoid global-version mismatch):
 

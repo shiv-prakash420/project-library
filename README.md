@@ -104,16 +104,7 @@ Quick start (recommended order)
 
   - Start backend (on port 3000) and then frontend. The React app will call the backend at `http://localhost:3000` by default.
 
-Optional: Run a local Postgres with Docker
 
-  ```powershell
-  docker run --name project-library-postgres -e POSTGRES_PASSWORD=changeme -e POSTGRES_DB=project_library -p 5432:5432 -d postgres:15
-  ```
-
-Troubleshooting
-- Prisma client not found / version mismatch: ensure `npx prisma generate` completes successfully.
-- `P1010` / connection refused: check host/port, credentials, and firewall.
-- If migrations fail: inspect `library-backend/prisma/migrations` SQL files and run `npx prisma migrate resolve --applied "<migration_id>"` with caution.
 
 Useful commands (PowerShell)
 
@@ -131,10 +122,3 @@ npm install
 npm start
 ```
 
-If you want, I can:
-- Add a `.env.example` file for the backend (I noticed there isn't one),
-- Add an npm script that runs Prisma generate before start,
-- Or run the full setup locally and report any runtime errors.
-
-Contact
-- If you hit specific errors, paste the exact error text and I will help debug.
